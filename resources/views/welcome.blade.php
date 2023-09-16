@@ -30,12 +30,15 @@
     <a href="/display" class="button-link">
         See Your Blogs
     </a>
+
     <div style="border: 3px dot-dash black;">
-    <h4>All Blogs:</h4><br>
+        <br><h4>All Blogs:</h4><br>
         @foreach($blogs as $blog)
             <div style="background-color: gray; padding: 10px;margin: 10px; ">
-                <h6>{{$blog['title']}}</h6>
-                {{$blog['body']}}
+                <h6>Title:&nbsp{{$blog['title']}}</h6>
+                <p style="text-align: justify;">{{$blog['body']}}</p>
+
+                <h6><br>By: {{ $blog->user->name }}</h6>
                 </div>
         @endforeach
     </div>

@@ -36,6 +36,7 @@ class AuthManager extends Controller
         if(Auth::attempt($credentials)){
             return redirect()->intended(route('welcome'));
         }
+
         return redirect()->intended(route('login'))->with("error","Login Details are Invalid");
     }
 
@@ -53,7 +54,7 @@ class AuthManager extends Controller
         if(!$user){
             return redirect()->intended(route('registration'))->with("error","Registration Failed");
         }
-        return redirect()->intended(route('login'))->with("Success","Registration Success");
+        return redirect()->intended(route('login'));
     }
 
     function logout(){

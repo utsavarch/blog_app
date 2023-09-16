@@ -36,7 +36,9 @@ Route::group(['middleware'=>'auth'],function(){
         $blogs= auth()-> user()->userposts()->latest()->get();
         return view('display',['blogs'=>$blogs]);
     });
-    Route::get('/edit-blog/{post}', [BlogController::class, 'showEditScreen']);
+    Route::get('/edit-blog/{blog}', [BlogController::class, 'showEditScreen']);
+    Route::put('/edit-blog/{blog}', [BlogController::class, 'postEditedblog']);
+    Route::delete('/delete-blog/{blog}', [BlogController::class, 'deleteblog']);
 });
 
 

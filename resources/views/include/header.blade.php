@@ -7,9 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         @auth
+              <li class="nav-item">
+                  <a class="nav-link" href="/welcome">Blogs Feed</a>
+              </li>
         <li class="nav-item">
           <a class="nav-link" href="/logout">Logout</a>
         </li>
+
         @else
               <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="/">Home</a>
