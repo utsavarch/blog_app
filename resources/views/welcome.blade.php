@@ -22,13 +22,22 @@
     <br>
     <form>
         @csrf <!-- Include the CSRF token for security -->
-        &nbsp&nbsp&nbsp<a href="/create" class="button-link">
+        <a href="/create" class="button-link">
             Create New Blog
         </a>
     </form>
     <br>
-    &nbsp&nbsp&nbsp<a href="" class="button-link">
+    <a href="/display" class="button-link">
         See Your Blogs
     </a>
+    <div style="border: 3px dot-dash black;">
+    <h4>All Blogs:</h4><br>
+        @foreach($blogs as $blog)
+            <div style="background-color: gray; padding: 10px;margin: 10px; ">
+                <h6>{{$blog['title']}}</h6>
+                {{$blog['body']}}
+                </div>
+        @endforeach
+    </div>
 
 @endsection

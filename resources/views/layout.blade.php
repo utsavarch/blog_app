@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
+      <style>
+          body, html {
+              margin-left:1%;
+              margin-right:1%;
+              margin-bottom:1%;
+              margin-top:1%;
+          }
+      </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title','Auth Laravel')</title>

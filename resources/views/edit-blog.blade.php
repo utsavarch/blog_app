@@ -1,5 +1,5 @@
 @extends('layout2')
-@section('title',"Create")
+@section('title',"Edit Blog")
 @section('content')
     <style>
         .button-link {
@@ -19,16 +19,12 @@
             color: #fff; /* New text color on hover */
         }
     </style>
-    <div class="mb-3">
-        <form action="/create_blog" method="POST">
+    <h4>Edit Blog</h4>
+    <form action="/edit-blog/{{$blog->id}}" method="POST">
         @csrf
-       <label for="formGroupExampleInput" class="form-label">Blog Title</label>
-       <input type="text" class="form-control" id="formGroupExampleInput" name="title" placeholder="Give a title to your blog">
-            <br>
-        <label for="formGroupExampleInput2" class="form-label">Blog Content</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" name="body" placeholder="Write your blog">
-        <br>
-            <button class="button-link"> Save Post</button>
-        </form>
-    </div>
+        @method('PUT')
+        <input type="text" name="title" value="{{$blog->title}}">
+        <textarea name="body">{{$blog->body}}</textarea>
+        <button class="button-link">Save Changes</button>
+    </form>
 @endsection

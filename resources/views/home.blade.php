@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title','Home')
 @section('content')
-  <h6>&nbsp&nbsp&nbspThis is a Blog posting app. LOGIN or REGISTER from the top to get started</h6>
+  <h6>This is a Blog posting app. LOGIN or REGISTER from the top to get started</h6>
     <br><br><br>
     <style>
         #pat{
