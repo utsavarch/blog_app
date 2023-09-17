@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 
+
 class BlogController extends Controller
 {
+
     public function deleteblog(Blog $blog){
         if (auth()->user()->id===$blog['user_id']){
             $blog->delete();
@@ -46,4 +48,20 @@ class BlogController extends Controller
         Blog::create($incomingFields);
         return redirect('/welcome');
     }
+    public function upvote(Blog $blog)
+    {
+        // Increment the upvotes count in the 'blogs' table
+        $blog->increment('upvotes');
+
+        return back(); // Redirect back to the blog post
+    }
+
+    public function downvote(Blog $blog)
+    {
+        // Increment the downvotes count in the 'blogs' table
+        $blog->increment('downvotes');
+
+        return back(); // Redirect back to the blog post
+    }
+
 }

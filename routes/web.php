@@ -39,6 +39,9 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/edit-blog/{blog}', [BlogController::class, 'showEditScreen']);
     Route::put('/edit-blog/{blog}', [BlogController::class, 'postEditedblog']);
     Route::delete('/delete-blog/{blog}', [BlogController::class, 'deleteblog']);
+    Route::post('/upvote/{blog}', [BlogController::class, 'upvote'])->name('blog.upvote');
+    Route::post('/downvote/{blog}', [BlogController::class, 'downvote'])->name('blog.downvote');
+
 });
 
 
