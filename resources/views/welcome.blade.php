@@ -34,14 +34,10 @@
             cursor: pointer;
         }
 
+
         .vote-button:hover {
             background-color: #0056b3; /* New background color on hover */
             border-color: #0056b3; /* New border color on hover */
-        }
-        .voted {
-            background-color: #5bc0de; /* Color for voted buttons */
-            border-color: #5bc0de; /* Border color for voted buttons */
-            color: #fff; /* Text color for voted buttons */
         }
     </style>
     <br>
@@ -67,11 +63,11 @@
                 <div class="vote-buttons">
                     <form method="post" action="/upvote/{{$blog->id}}">
                         @csrf
-                        <button type="submit" class="vote-button">Upvote ({{$blog->upvotes}})</button>
+                        <button type="submit" class="vote-button">&#128077; ({{$blog->upvotes}})</button>
                     </form>
                     <form method="post" action="/downvote/{{$blog->id}}">
                         @csrf
-                        <button type="submit" class="vote-button">Downvote ({{$blog->downvotes}})</button>
+                        <button type="submit" class="vote-button">&#128078; ({{$blog->downvotes}})</button>
                     </form>
                 </div>
             </div>
