@@ -42,7 +42,7 @@
     </style>
     <br>
     <form>
-        @csrf <!-- Include the CSRF token for security -->
+        @csrf
         <a href="/create" class="button-link">
             Create New Blog
         </a>
